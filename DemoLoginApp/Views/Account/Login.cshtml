@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100 login-page">
+    <!-- login box -->
+    <div class="login-box">
+        <div class="card shadow-lg">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                <h2 class="text-center mb-4" style="font-weight: bold;">LOGIN</h2>
+                @if (ViewBag.Message != null)
+                {
+                            <div class="alert alert-danger w-100" >
+                        @ViewBag.Message
+                        </div>
+                }
+                <form asp-action="Login" method="post" class="w-100">
+                    <!-- Username Field -->
+                    <div class="mb-4">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <!-- Password Field -->
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <!-- Sign Up Link -->
+                    <div class="d-flex justify-content-center align-items-center mb-3">
+                        <a asp-controller="Account" asp-action="Signup" class="text-decoration-none">Don't have an account? <strong>Sign Up</strong></a>
+                    </div>
+                    <!-- Login Button -->
+                    <button type="submit" class="btn btn-primary w-100">Log In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,125 @@
+﻿.login-page {
+    background-image: url('/images/stock-photo-dentist-tools-instruments-dental-office-dental-explorer-sickle-probe-dental.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    background-color: #f0f0f0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Login Box */
+.login-box {
+    width: 400px;
+    height: 460px;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Card Styling */
+.card {
+    height: 100%;
+    border-radius: 32px;
+    background-color: #ffffffc2;
+}
+
+
+/* Card Body Styling with Flexbox */
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Styling */
+form {
+    width: 100%; 
+}
+
+.btn {
+    height: 45px
+}
+
+label {
+    color: #3c3b3bff;
+    font-weight: 400 !important;
+}
+
+/* Responsive Adjustments for Smaller Devices */
+@media (max-width: 768px) {
+    .login-box {
+        width: 300px;
+        height: 450px;
+    }
+
+    .card-body {
+        padding: 15px; /* Smaller padding for small devices */
+    }
+}
+
+/* for signup page*/
+/* Sign-Up Page */
+.signup-page {
+    background-image: url('/images/stock-photo-dentist-tools-instruments-dental-office-dental-explorer-sickle-probe-dental.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Sign-Up Box */
+.signup-box {
+    width: 400px;
+    height: 520px;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Title Styling */
+.signup-title {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Subtitle Styling */
+.signup-subtitle {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Login Link Styling */
+.signup-login-link a {
+    font-size: 0.9rem;
+    color: #007bff;
+    margin-top: 20px
+}
+
+    .signup-login-link a:hover {
+        text-decoration: underline;
+    }
+
+/* Sign-Up Button */
+.signup-button {
+    background-color: #007bff;
+    border: none;
+    height: 45px;
+}
+
+    .signup-button:hover {
+        background-color: #0056b3;
+    }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .signup-box {
+        width: 300px;
+        height: 520px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+}

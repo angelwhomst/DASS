@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100 signup-page">
+    <!-- Sign Up Box -->
+    <div class="signup-box">
+        <div class="card shadow-lg">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                <h2 class="text-center mb-3 signup-title">SIGN UP</h2>
+                <p class="text-center text-muted mb-4 signup-subtitle">
+                    Sign up to your account and start tracking your appointments
+                </p>
+                @if (ViewBag.Message != null)
+                {
+                            <div class="alert alert-danger w-100">
+                        @ViewBag.Message
+                            </div>
+                }
+                <form asp-action="Signup" method="post" class="w-100">
+                    <!-- Username Field -->
+                    <div class="mb-2">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <!-- Password Field -->
+                    <div class="mb-2">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <!-- Confirm Password Field -->
+                    <div class="mb-2">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                    <!-- Login Link -->
+                    <div class="d-flex justify-content-center align-items-center mb-2 signup-login-link">
+                        <a href="/Account/Login" class="text-decoration-none">Already have an account? <strong>Log In</strong></a>
+                    </div>
+                    <!-- Sign Up Button -->
+                    <button type="submit" class="btn btn-primary w-100 signup-button mb-2">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
