@@ -73,7 +73,7 @@ label {
 /* Sign-Up Box */
 .signup-box {
     width: 400px;
-    height: 520px;
+    height: 580px;
     max-width: 90%;
     max-height: 90%;
 }
@@ -123,3 +123,5 @@ label {
         padding: 15px;
     }
 }
+
+

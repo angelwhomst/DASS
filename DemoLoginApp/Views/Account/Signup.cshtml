@@ -11,35 +11,73 @@
                 <p class="text-center text-muted mb-4 signup-subtitle">
                     Sign up to your account and start tracking your appointments
                 </p>
+
+                <!-- Show Errors or Success Messages -->
+                @if (!ViewData.ModelState.IsValid)
+                {
+                        <div class="alert alert-danger w-100">
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                                    <p>@error.ErrorMessage</p>
+                        }
+                        </div>
+                }
+
                 @if (ViewBag.Message != null)
                 {
-                            <div class="alert alert-danger w-100">
+                        <div class="alert alert-danger w-100">
                         @ViewBag.Message
-                            </div>
+                        </div>
                 }
-                <form asp-action="Signup" method="post" class="w-100">
+
+                @if (ViewBag.SignupSuccess != null)
+                {
+                        <div class="alert alert-success w-100">
+                        @ViewBag.SignupSuccess
+                        </div>
+                }
+
+                <form asp-action="Register" method="post" class="w-100">
+                    @Html.AntiForgeryToken()
+
+                    <!-- Email Field -->  
+                    <div class="mb-1">  
+                        <label for="email" class="form-label">Email Address</label>  
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>  
+                    </div> 
+
                     <!-- Username Field -->
-                    <div class="mb-2">
+                    <div class="mb-1">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
                     </div>
+
                     <!-- Password Field -->
-                    <div class="mb-2">
+                    <div class="mb-1">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
                     </div>
+
                     <!-- Confirm Password Field -->
-                    <div class="mb-2">
+                    <div class="mb-1">
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
                     </div>
+
                     <!-- Login Link -->
                     <div class="d-flex justify-content-center align-items-center mb-2 signup-login-link">
                         <a href="/Account/Login" class="text-decoration-none">Already have an account? <strong>Log In</strong></a>
                     </div>
+
                     <!-- Sign Up Button -->
                     <button type="submit" class="btn btn-primary w-100 signup-button mb-2">Sign Up</button>
                 </form>
+
+                <div class="mt-1">
+                    <a asp-controller="Account" asp-action="ForgotPassword" class="text-decoration-none">
+                        Forgot your password?
+                    </a>
+                </div>
             </div>
         </div>
     </div>
